@@ -34,8 +34,10 @@ export const addPost = (req, resp) => {
             userInfo.id
         ]
         db.query(q, [values], (err, data)=>{
-            if(err) return resp.status(500).send(err)
-
+            if(err) 
+                {
+                    return resp.status(500).send(err)
+                }
             return resp.json("Post has been inserted!")
         })
 
